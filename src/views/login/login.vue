@@ -34,19 +34,24 @@
       </el-form>
       <!-- 两个按钮 -->
       <el-button  class="setBtn">登录</el-button>
-      <el-button  class="setBtn">注册</el-button>
+      <el-button  class="setBtn" @click="clickRigester">注册</el-button>
     </div>
       <!-- 右边 -->
     <div class="right">
       <img src="../../assets/img/login_banner_ele.png" alt="" />
     </div>
+     <register ref="register"></register>
 
   </div>
 </template>
 
 <script>
+import register from './register.vue'
 //为什么,弹性布局,对这个右边图片不生效?
 export default {
+  components :{
+    register
+  },
   data() {
     return {
       form: {
@@ -58,6 +63,13 @@ export default {
       rules :{
 
       }
+    }
+  },
+  methods: {
+    clickRigester (){
+      // this.$router.push('/register') // 这个只是弹出一个框,与路由没有关系. 因为注册 的背景是登录页
+      this.$refs.register.dialogVisible=true
+
     }
   },
 };

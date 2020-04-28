@@ -10,4 +10,6 @@ export default {};
 
 <style lang="less">
 @import  url(~@/style/index.css);
+
+
 </style>
