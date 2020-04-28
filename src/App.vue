@@ -1,15 +1,13 @@
 <template>
-  <div>我是App
+  <div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
+<style lang="less">
+@import  url(~@/style/index.css);
 </style>
