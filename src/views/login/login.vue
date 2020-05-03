@@ -33,7 +33,7 @@
         </el-form-item>
       </el-form>
       <!-- 两个按钮 -->
-      <el-button  class="setBtn">登录</el-button>
+      <el-button  class="setBtn" @click="clickLogin">登录</el-button>
       <el-button  class="setBtn" @click="clickRigester">注册</el-button>
     </div>
       <!-- 右边 -->
@@ -70,6 +70,9 @@ export default {
       // this.$router.push('/register') // 这个只是弹出一个框,与路由没有关系. 因为注册 的背景是登录页
       this.$refs.register.dialogVisible=true
 
+    },
+    clickLogin () {
+      this.$router.push('/home')
     }
   },
 };
