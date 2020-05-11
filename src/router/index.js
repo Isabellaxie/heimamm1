@@ -17,44 +17,58 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            component: login  //这里要填入一个组件名(填入import的名字)，也就是上面地址对应的组件
+            component: login,  //这里要填入一个组件名(填入import的名字)，也就是上面地址对应的组件
+            meta: {
+                title: '登录页',
+                rules: ['超级管理员', '管理员','老师','学生']
+            }
         },
         {
             path: '/home', // 这个名字,可以自己 看情况取的
             component: layout,// 这个,其实就是 layout.vue 不是那个文件夹名.  今天写这个静态, 以为是文件夹名
             redirect: '/home/business',
             children: [
-                // '/chart' 不能加 / ????    /是相对的,  不能用?           
+                // '/chart' 不能加 / ????    /是相对的,  不能用?   
+                //路由元信息, 是一个可以让我们 随便定义信息的一个对象        
                 {
                     path: 'chart',
                     component: chart,
-                    meta:{
-                        title:'数据概览'
+                    meta: {
+                        title: '数据概览',
+                        rules: ['超级管理员', '管理员','老师']
                     }
                 },
                 {
                     path: 'question',
                     component: question,
-                    meta:{
-                        title:'题库列表'
+                    meta: {
+                        title: '题库列表',
+                        rules: ['超级管理员', '管理员', '老师']
                     }
                 },
                 {
                     path: 'business',
                     component: business,
-                    meta:{
-                        title:'企业列表'
+                    meta: {
+                        title: '企业列表',
+                        rules: ['超级管理员', '管理员','老师']
                     }
                 },
                 {
                     path: 'user',
                     component: user,
-                    meta:'用户列表'
+                    meta: {
+                        title: '用户列表',
+                        rules: ['超级管理员', '管理员']
+                    }
                 },
                 {
                     path: 'subject',
                     component: subject,
-                    meta:'学科列表'
+                    meta: {
+                        title:'学科列表',
+                        rules: ['超级管理员', '管理员', '老师', '学生']
+                    }
                 },
             ]
 
