@@ -84,7 +84,8 @@ export default {
 
             },
             rules:{
-
+              username:[{requested:true,message:'请输入你的名字',trigger:'change'},
+              {max:4,min:2,messsage:'请输入2-4位长度的名字',trigger:'change'}]
             }
         }
     },
